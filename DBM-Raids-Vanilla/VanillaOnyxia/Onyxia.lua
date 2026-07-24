@@ -179,7 +179,7 @@ function mod:OnSync(msg, arg)
 	if msg == "Phase" then
 		local phase = tonumber(arg)
 		if not phase then return end
-		if self:GetStage(phase, 3) then
+		if self:GetStage(phase, 1) then
 			self:SetStage(phase)
 			if phase % 1 == 0 then
 			warnPhase:Show(DBM_CORE_L.AUTO_ANNOUNCE_TEXTS.stage:format(phase))
