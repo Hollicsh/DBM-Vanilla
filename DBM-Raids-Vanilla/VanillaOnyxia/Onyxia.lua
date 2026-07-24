@@ -182,7 +182,7 @@ function mod:OnSync(msg, arg)
 		if self:GetStage(phase, 1) then
 			self:SetStage(phase)
 			if phase % 1 == 0 then
-			warnPhase:Show(DBM_CORE_L.AUTO_ANNOUNCE_TEXTS.stage:format(phase))
+				warnPhase:Show(DBM_CORE_L.AUTO_ANNOUNCE_TEXTS.stage:format(phase))
 			end
 			if phase == 1.5 then
 				warnPhase2Soon:Show()
