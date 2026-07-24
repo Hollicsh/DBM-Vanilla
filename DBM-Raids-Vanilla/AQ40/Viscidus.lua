@@ -195,6 +195,7 @@ function mod:SWING_MISSED(srcGuid)
 end
 
 function mod:OnSync(msg, count, sender)
+	if not self:IsInCombat() then return end
 	if msg == "Freeze" and sender then
 		count = tonumber(count)
 		warnFreeze:Show(count)

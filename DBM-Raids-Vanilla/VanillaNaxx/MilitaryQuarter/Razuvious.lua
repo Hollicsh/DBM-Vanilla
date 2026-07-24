@@ -124,6 +124,7 @@ function mod:UNIT_SPELLCAST_SUCCEEDED(uId, _, spellId)
 end
 
 function mod:OnSync(event, guid, icon)
+	if not self:IsInCombat() then return end
     if event == "MindExhaustion" and guid then
         mindExhaustionTimers[guid] = GetTime() + 60
         timerMindExhaustionCD:Start(guid)

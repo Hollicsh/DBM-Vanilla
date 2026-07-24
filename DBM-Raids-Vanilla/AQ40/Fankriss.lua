@@ -95,6 +95,7 @@ function mod:UNIT_SPELLCAST_SUCCEEDED(_, _, spellId)
 end
 
 function mod:OnSync(msg)
+	if not self:IsInCombat() then return end
 	if msg == "Spawns" then
 		if self.Options.SpecWarn26631adds then
 			specWarnSpawns:Show()

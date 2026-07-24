@@ -73,6 +73,7 @@ function mod:UNIT_SPELLCAST_SUCCEEDED(_, _, spellId)
 end
 
 function mod:OnSync(event)
+	if not self:IsInCombat() then return end
     if event == "Vanish" then
 		self.vb.vanished = true
 		warnVanish:Show()

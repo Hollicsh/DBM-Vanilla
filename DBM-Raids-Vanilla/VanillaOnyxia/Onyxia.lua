@@ -175,6 +175,7 @@ function mod:UNIT_HEALTH(uId)
 end
 
 function mod:OnSync(msg, arg)
+	if not self:IsInCombat() then return end
 	if msg == "Phase" then
 		local phase = tonumber(arg)
 		if not phase then return end

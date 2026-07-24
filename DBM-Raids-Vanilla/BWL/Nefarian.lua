@@ -225,6 +225,7 @@ do
 	}
 
 	function mod:OnSync(msg, arg)
+		if not self:IsInCombat() then return end
 		if msg == "Phase" then
 			local phase = tonumber(arg)
 			if not phase then return end
@@ -239,10 +240,7 @@ do
 					warnPhase:Play("pthree")
 				end
 			end
-		end
-
-		if not self:IsInCombat() then return end
-		if msg == "ClassCall" then
+		elseif msg == "ClassCall" then
 			local className = LOCALIZED_CLASS_NAMES_MALE[arg]
 			local classColor = RAID_CLASS_COLORS[arg]
 			local classNameColored = className

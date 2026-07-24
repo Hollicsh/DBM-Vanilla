@@ -235,6 +235,7 @@ function mod:UNIT_SPELLCAST_SUCCEEDED(_, _, spellId)
 end
 
 function mod:OnSync(event)
+	if not self:IsInCombat() then return end
     if event == "TeleportLive" then
 		if self:GetStage(1) then
 			self:SetStage(2)

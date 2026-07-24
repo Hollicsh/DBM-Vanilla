@@ -194,6 +194,7 @@ function mod:CHAT_MSG_MONSTER_YELL(msg)
 end
 
 function mod:OnSync(msg, arg)
+	if not self:IsInCombat() then return end
 	if msg == "BossDies" then
 		local cid = tonumber(arg)
 		if cid then
