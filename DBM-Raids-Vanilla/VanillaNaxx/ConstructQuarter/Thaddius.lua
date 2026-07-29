@@ -22,7 +22,8 @@ mod:RegisterCombat("combat_yell", L.Yell1P1, L.Yell2P1)
 mod:RegisterEventsInCombat(
     "SPELL_CAST_START 28089",
 	"SPELL_CAST_SUCCESS 28338 28339",
-    "UNIT_AURA player",
+    "SPELL_AURA_APPLIED 28059 28084",
+	"SPELL_AURA_REFRESH 28059 28084",
     "CHAT_MSG_MONSTER_EMOTE",
 	"CHAT_MSG_MONSTER_YELL"
 )
@@ -49,7 +50,6 @@ mod:AddInfoFrameOption()
 mod:AddDropdownOption("AirowsEnabled", {"Never", "TwoCamp", "ArrowsRightLeft", "ArrowsInverse"}, "Never", "misc", nil, 28089)
 
 local currentCharge
-local lastShift = 0
 local deadBosses = {}
 
 local updateInfoFrame
@@ -108,66 +108,62 @@ function mod:SPELL_CAST_START(args)
 		timerShiftCast:Start()
 		warnShiftCasting:Show()
 		warnShiftSoon:Schedule(20)
-		lastShift = GetTime()
 	end
 end
 
 function mod:SPELL_CAST_SUCCESS(args)
-	if (args:IsSpell(28338) or args:IsSpell(28339)) and self:AntiSpam(3,1) then
+	if args:IsSpell(28338, 28339) and self:AntiSpam(3, 1) then
 		warnThrow:Show()
 		timerThrow:Start()
 		warnThrowSoon:Schedule(16)
 	end
 end
 
-function mod:UNIT_AURA()
-	if self:GetStage(2, 3) or (GetTime() - lastShift) > 5 or (GetTime() - lastShift) < 3 then return end
-	local charge
-	local chargeIcon
-	local i = 1
-	while UnitDebuff("player", i) do
-		local _, icon, count, _, _, _, _, _, _, _, _, _, _, _, _, count2 = UnitDebuff("player", i)
-		if icon == 135768 then
-			if (count2 or count) > 1 then return end
-			charge = CL.NEGATIVE
-			chargeIcon = tostring(icon)
-			yellShift:Yell(7, "- -")
-		elseif icon == 135769 then
-			if (count2 or count) > 1 then return end
-			charge = CL.POSITIVE
-			chargeIcon = tostring(icon)
-			yellShift:Yell(6, "+ +")
-		end
-		i = i + 1
+function mod:SPELL_AURA_APPLIED(args)
+	if not args:IsPlayer() then return end
+	local charge, chargeIcon
+	if args:IsSpell(28059) then
+		charge = CL.POSITIVE
+		chargeIcon = "135769"
+		yellShift:Yell(6, "+ +")
+	elseif args:IsSpell(28084) then
+		charge = CL.NEGATIVE
+		chargeIcon = "135768"
+		yellShift:Yell(7, "- -")
 	end
-	if charge then
-		lastShift = 0
-		--Did not Change
-		if charge == currentCharge then
-			warnChargeNotChanged:UpdateIcon(chargeIcon)
-			warnChargeNotChanged:Show()
-			warnChargeNotChanged:Play("dontmove")
-			if self.Options.AirowsEnabled == "ArrowsInverse" then
-				self:ShowLeftArrow()
-			elseif self.Options.AirowsEnabled == "ArrowsRightLeft" then
-				self:ShowRightArrow()
-			end
-		--Changed (only play voice on actual polarity flip, not first application)
-		else
-			warnChargeChanged:UpdateIcon(chargeIcon)
-			warnChargeChanged:Show(charge)
-			if currentCharge then
-				warnChargeChanged:Play("movesoon")
-				if self.Options.AirowsEnabled == "ArrowsInverse" then
-					self:ShowRightArrow()
-				elseif self.Options.AirowsEnabled == "ArrowsRightLeft" then
-					self:ShowLeftArrow()
-				elseif self.Options.AirowsEnabled == "TwoCamp" then
-					self:ShowUpArrow()
-				end
-			end
+	warnChargeChanged:UpdateIcon(chargeIcon)
+	warnChargeChanged:Show(charge)
+	--Only play voice on actual polarity flip, not first application
+	if currentCharge then
+		warnChargeChanged:Play("movesoon")
+		if self.Options.AirowsEnabled == "ArrowsInverse" then
+			self:ShowRightArrow()
+		elseif self.Options.AirowsEnabled == "ArrowsRightLeft" then
+			self:ShowLeftArrow()
+		elseif self.Options.AirowsEnabled == "TwoCamp" then
+			self:ShowUpArrow()
 		end
-		currentCharge = charge
+	end
+	currentCharge = charge
+end
+
+function mod:SPELL_AURA_REFRESH(args)
+	if not args:IsPlayer() then return end
+	local chargeIcon
+	if args:IsSpell(28059) then
+		chargeIcon = "135769"
+		yellShift:Yell(6, "+ +")
+	elseif args:IsSpell(28084) then
+		chargeIcon = "135768"
+		yellShift:Yell(7, "- -")
+	end
+	warnChargeNotChanged:UpdateIcon(chargeIcon)
+	warnChargeNotChanged:Show()
+	warnChargeNotChanged:Play("dontmove")
+	if self.Options.AirowsEnabled == "ArrowsInverse" then
+		self:ShowLeftArrow()
+	elseif self.Options.AirowsEnabled == "ArrowsRightLeft" then
+		self:ShowRightArrow()
 	end
 end
 
