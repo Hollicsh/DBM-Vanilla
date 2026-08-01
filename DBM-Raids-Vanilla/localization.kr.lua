@@ -826,14 +826,6 @@ L:SetGeneralLocalization({
 	name = "귀부인 펠리나"
 })
 
-L:SetWarningLocalization({
-	WarningEmbraceExpire	= "5초 후 귀부인의 은총 종료"
-})
-
-L:SetOptionLocalization({
-	WarningEmbraceExpire	= "귀부인의 은총 종료 사전 경고 보기"
-})
-
 L:SetMiscLocalization({
 	Pull1					= "내 앞에 무릎을 꿇어라, 벌레들아!",
 	Pull2					= "나에게서 도망칠 수는 없다!",

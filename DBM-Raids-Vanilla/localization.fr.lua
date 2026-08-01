@@ -808,14 +808,6 @@ L:SetGeneralLocalization({
 	name = "Grande veuve Faerlina"
 })
 
-L:SetWarningLocalization({
-	WarningEmbraceExpire	= "Etreinte de la veuve se dissipe dans 5 sec"
-})
-
-L:SetOptionLocalization({
-	WarningEmbraceExpire	= "Afficher une pré-annonce lorsque $spell:28732 se dissipe"
-})
-
 L:SetMiscLocalization({
 	Pull1					= "À genoux, vermisseau !",
 	Pull2					= "Vous ne pouvez pas m'échapper !",

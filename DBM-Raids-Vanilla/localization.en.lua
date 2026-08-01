@@ -824,14 +824,6 @@ L:SetGeneralLocalization({
 	name = "Grand Widow Faerlina"
 })
 
-L:SetWarningLocalization({
-	WarningEmbraceExpire	= "Widow's Embrace ends in 5 seconds"
-})
-
-L:SetOptionLocalization({
-	WarningEmbraceExpire	= "Show pre-warning for Widow's Embrace fade"
-})
-
 L:SetMiscLocalization({
 	Pull1					= "Kneel before me, worm!",
 	Pull2					= "You cannot hide from me!",

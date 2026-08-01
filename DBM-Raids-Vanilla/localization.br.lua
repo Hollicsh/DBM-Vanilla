@@ -810,14 +810,6 @@ L:SetGeneralLocalization({
 	name = "Grã-viúva Faerlina"
 })
 
-L:SetWarningLocalization({
-	WarningEmbraceExpire	= "Abraço da Viúva se desvanece em 5 segundos"
-})
-
-L:SetOptionLocalization({
-	WarningEmbraceExpire	= "Exibir anúncio antecipado quando $spell:28732 se desvanece",
-})
-
 L:SetMiscLocalization({
 	Pull1					= "Ajoelhe-se perante a mim, verme!",
 	Pull2 					= "Vocês não podem se esconder de mim!",

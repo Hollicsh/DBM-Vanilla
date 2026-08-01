@@ -23,7 +23,7 @@ mod:RegisterEventsInCombat(
 )
 
 local warnEmbraceActive		= mod:NewSpellAnnounce(28732, 1)
-local warnEmbraceExpire		= mod:NewAnnounce("WarningEmbraceExpire", 2, 28732)
+local warnEmbraceExpire		= mod:NewFadesSoonAnnounce(28732, 2)
 local warnEmbraceExpired	= mod:NewFadesAnnounce(28732, 3)
 local warnEnrage			= mod:NewSpellAnnounce(28131, 4)
 

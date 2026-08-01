@@ -830,14 +830,6 @@ L:SetGeneralLocalization({
 	name = "Великая вдова Фарлина"
 })
 
-L:SetWarningLocalization({
-	WarningEmbraceExpire	= "Объятие Вдовы через 5 сек."
-})
-
-L:SetOptionLocalization({
-	WarningEmbraceExpire	= "Заранее предупреждать, когда $spell:28732 исчезнет"
-})
-
 L:SetMiscLocalization({
 	Pull1					= "На колени предо мной, червь!",
 	Pull2					= "Тебе не скрыться от меня!",

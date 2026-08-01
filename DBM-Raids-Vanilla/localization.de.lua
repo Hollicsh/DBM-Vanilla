@@ -778,14 +778,6 @@ L:SetGeneralLocalization({
 	name = "Großwitwe Faerlina"
 })
 
-L:SetWarningLocalization({
-	WarningEmbraceExpire	= "Umarmung endet in 5 Sek"
-})
-
-L:SetOptionLocalization({
-	WarningEmbraceExpire	= "Zeige Vorwarnung für das Ende von $spell:28732"
-})
-
 L:SetMiscLocalization({
 	Pull1					= "Kniet nieder, Wurm!",
 	Pull2					= "Ihr könnt euch nicht vor mir verstecken!",

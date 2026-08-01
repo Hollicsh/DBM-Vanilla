@@ -727,14 +727,6 @@ L:SetGeneralLocalization({
 	name 				= "黑女巫法琳娜"
 })
 
-L:SetWarningLocalization({
-	WarningEmbraceExpire		= "黑女巫的拥抱5秒后结束"
-})
-
-L:SetOptionLocalization({
-	WarningEmbraceExpire		= "为黑女巫的拥抱结束显示提前警报"
-})
-
 L:SetMiscLocalization({
 	Pull1					= "跪下求饶吧，懦夫！",
 	Pull2					= "休想从我面前逃掉！",

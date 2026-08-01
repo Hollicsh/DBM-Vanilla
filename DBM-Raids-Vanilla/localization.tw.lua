@@ -728,14 +728,6 @@ L:SetGeneralLocalization({
 	name = "大寡婦費琳娜"
 })
 
-L:SetWarningLocalization({
-	WarningEmbraceExpire	= "寡婦之擁5秒後結束"
-})
-
-L:SetOptionLocalization({
-	WarningEmbraceExpire	= "為寡婦之擁結束顯示預先警告"
-})
-
 L:SetMiscLocalization({
 	Pull1					= "跪下求饒吧，懦夫！",
 	Pull2					= "休想從我面前逃掉！",
