@@ -975,7 +975,6 @@ L:SetGeneralLocalization({
 
 L:SetOptionLocalization({
 	TimerWave			= "Zeige Zeit bis nächste Welle",
-	TimerPhase2			= "Zeige Zeit bis Phase 2",
 	WarningWaveSoon		= "Warne, wenn bald eine neue Welle kommt",
 	WarningWaveSpawned	= "Warne, wenn eine neue Welle kommt",
 	WarningRiderDown	= "Zeige Warnung, wenn ein Unerbittlicher Reiter stirbt",
@@ -984,7 +983,6 @@ L:SetOptionLocalization({
 
 L:SetTimerLocalization({
 	TimerWave	= "Welle %d/18",
-	TimerPhase2	= "Phase 2"
 })
 
 L:SetWarningLocalization({
@@ -1076,7 +1074,6 @@ L:SetGeneralLocalization({
 })
 
 L:SetOptionLocalization({
-	TimerPhase2			= "Zeige Zeit bis Phase 2",
 	specwarnP2Soon		= "Spezialwarnung 10 Sekunden bevor Kel'Thuzad angreift"
 })
 
@@ -1086,10 +1083,6 @@ L:SetMiscLocalization({
 
 L:SetWarningLocalization({
 	specwarnP2Soon	= "Kel'Thuzad greift in 10 Sekunden an"
-})
-
-L:SetTimerLocalization({
-	TimerPhase2	= "Phase 2"
 })
 
 --------------------

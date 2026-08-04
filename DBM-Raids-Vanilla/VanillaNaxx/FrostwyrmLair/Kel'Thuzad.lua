@@ -83,8 +83,7 @@ local timerManaBombCD		= mod:NewVarTimer("v20.2-50.9", 27819, nil, "ManaUser", n
 local timerFrostBlastCD		= mod:NewVarTimer(DBM:IsSeasonal("SeasonOfDiscovery") and "v30.3-58.2" or "v33.5-75.3", 27808, nil, nil, nil, 3, nil, DBM_COMMON_L.DEADLY_ICON)
 local timerfrostBlast		= mod:NewBuffFadesTimer(5, 27808, nil, nil, nil, 5, nil, DBM_COMMON_L.HEALER_ICON)
 local timerMCCD				= mod:NewVarTimer("v63.1-145.4", 28410, nil, nil, nil, 3)
-local timerPhase2			= mod:NewTimer(DBM:IsSeasonal("SeasonOfDiscovery") and phase1DurationSoD or phase1DurationEra, "TimerPhase2", "136116", nil, nil, 6)
-
+local timerPhase2			= mod:NewStageCountTimer(DBM:IsSeasonal("SeasonOfDiscovery") and phase1DurationSoD or phase1DurationEra)
 local specwarnP2Soon
 if DBM:IsSeasonal("SeasonOfDiscovery") then
 specwarnP2Soon		= mod:NewSpecialWarning("specwarnP2Soon")
@@ -112,7 +111,7 @@ end
 function mod:OnCombatStart()
 	self:SetStage(1)
 	warnPhase:Show(DBM_CORE_L.AUTO_ANNOUNCE_TEXTS.stage:format(1))
-	timerPhase2:Start()
+	timerPhase2:Start(nil, 2)
 	self:RegisterShortTermEvents(
 		"UNIT_HEALTH"
 	)

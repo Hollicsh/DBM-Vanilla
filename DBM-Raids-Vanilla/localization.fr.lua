@@ -1002,7 +1002,6 @@ L:SetGeneralLocalization({
 
 L:SetOptionLocalization({
 	TimerWave			= "Afficher un chronomètre des vagues",
-	TimerPhase2			= "Afficher un chronomètre pour la phase 2",
 	WarningWaveSoon		= "Afficher une pré-annonce pour les vagues",
 	WarningWaveSpawned	= "Afficher une annonce quand une vague est arrivée",
 	WarningRiderDown	= "Afficher une annonce quand un Cavalier meurt",
@@ -1012,7 +1011,6 @@ L:SetOptionLocalization({
 
 L:SetTimerLocalization({
 	TimerWave			= "Vague %d/18",
-	TimerPhase2			= "Phase 2"
 })
 
 L:SetWarningLocalization({
@@ -1104,7 +1102,6 @@ L:SetGeneralLocalization({
 })
 
 L:SetOptionLocalization({
-	TimerPhase2				= "Afficher un chronomètre pour la phase 2",
 	specwarnP2Soon 			= "Afficher une annonce spéciale 10 secondes avant le passage à la phase 2"
 })
 
@@ -1116,9 +1113,6 @@ L:SetWarningLocalization({
 	specwarnP2Soon  		= "Phase 2 dans 10 secondes"
 })
 
-L:SetTimerLocalization({
-	TimerPhase2				= "Phase 2"
-})
 -----------------
 --  Naxx Trash --
 -----------------

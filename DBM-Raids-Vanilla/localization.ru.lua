@@ -1027,7 +1027,6 @@ L:SetGeneralLocalization({
 
 L:SetOptionLocalization({
 	TimerWave			= "Отсчет времени до следующей волны",
-	TimerPhase2			= "Отсчет времени до 2-й фазы",
 	WarningWaveSoon		= "Показывать предупреждение перед следующей волной",
 	WarningWaveSpawned	= "Показывать предупреждение для волны призыва",
 	WarningRiderDown	= "Показывать предупреждение, когда Всадник мертв",
@@ -1036,7 +1035,6 @@ L:SetOptionLocalization({
 
 L:SetTimerLocalization({
 	TimerWave	= "Волна %d/18",
-	TimerPhase2	= "2-я фаза"
 })
 
 L:SetWarningLocalization({
@@ -1128,7 +1126,6 @@ L:SetGeneralLocalization({
 })
 
 L:SetOptionLocalization({
-	TimerPhase2			= "Отсчет времени до 2-й фазы",
 	specwarnP2Soon		= "Показывать спецпредупреждение за 10 сек. до вступления Кел'Тузада в бой"
 })
 
@@ -1138,10 +1135,6 @@ L:SetMiscLocalization({
 
 L:SetWarningLocalization({
 	specwarnP2Soon	= "Кел'Тузад вступает в бой через 10 сек."
-})
-
-L:SetTimerLocalization({
-	TimerPhase2	= "2-я фаза"
 })
 
 -----------------

@@ -925,7 +925,6 @@ L:SetGeneralLocalization({
 
 L:SetOptionLocalization({
 	TimerWave			= "為下一波顯示計時器",
-	TimerPhase2			= "為第二階段顯示計時器",
 	WarningWaveSoon		= "為波數顯示預先警告",
 	WarningWaveSpawned	= "為波數出現顯示警告",
 	WarningRiderDown	= "當無情的騎兵死亡時顯示警告",
@@ -934,7 +933,6 @@ L:SetOptionLocalization({
 
 L:SetTimerLocalization({
 	TimerWave	= "第%d/18波",
-	TimerPhase2	= "第二階段"
 })
 
 L:SetWarningLocalization({
@@ -1026,7 +1024,6 @@ L:SetGeneralLocalization({
 })
 
 L:SetOptionLocalization({
-	TimerPhase2			= "為第二階段顯示計時器",
 	specwarnP2Soon		= "為科爾蘇加德攻擊前10秒顯示特別警告"
 })
 
@@ -1036,10 +1033,6 @@ L:SetMiscLocalization({
 
 L:SetWarningLocalization({
 	specwarnP2Soon	= "10秒後科爾蘇加德開始攻擊"
-})
-
-L:SetTimerLocalization({
-	TimerPhase2	= "第二階段"
 })
 
 -----------------

@@ -1012,7 +1012,6 @@ L:SetGeneralLocalization({
 
 L:SetOptionLocalization({
 	TimerWave			= "Mostrar temporizador para la siguiente oleada de esbirros",
-	TimerPhase2			= "Mostrar temporizador para fase 2",
 	WarningWaveSoon		= "Mostrar anuncio anticipado para la siguiente oleada de esbirros",
 	WarningWaveSpawned	= "Mostrar anuncio cuando comience una oleada de esbirros",
 	WarningRiderDown	= "Mostrar anuncio cuando muera un Jinete inflexible",
@@ -1021,7 +1020,6 @@ L:SetOptionLocalization({
 
 L:SetTimerLocalization({
 	TimerWave	= "Oleada %d/18",
-	TimerPhase2	= "Fase 2"
 })
 
 L:SetWarningLocalization({
@@ -1113,7 +1111,6 @@ L:SetGeneralLocalization({
 })
 
 L:SetOptionLocalization({
-	TimerPhase2			= "Mostrar temporizador para fase 2",
 	specwarnP2Soon		= "Mostrar anuncio especial 10 segundos antes del cambio a fase 2"
 })
 
@@ -1123,10 +1120,6 @@ L:SetMiscLocalization({
 
 L:SetWarningLocalization({
 	specwarnP2Soon	= "Fase 2 en 10 segundos"
-})
-
-L:SetTimerLocalization({
-	TimerPhase2	= "Fase 2"
 })
 
 -----------------

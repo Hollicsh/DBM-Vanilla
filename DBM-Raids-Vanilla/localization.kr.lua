@@ -1023,7 +1023,6 @@ L:SetGeneralLocalization({
 
 L:SetOptionLocalization({
 	TimerWave			= "다음 병력 타이머 바 보기",
-	TimerPhase2			= "2단계 타이머 바 보기",
 	WarningWaveSoon		= "병력 사전 경고 보기",
 	WarningWaveSpawned	= "병력 등장시 알림 보기",
 	WarningRiderDown	= "무자비한 죽음의 기병을 잡으면 알림 보기",
@@ -1032,7 +1031,6 @@ L:SetOptionLocalization({
 
 L:SetTimerLocalization({
 	TimerWave	= "병력: %d/18",
-	TimerPhase2	= "2단계"
 })
 
 L:SetWarningLocalization({
@@ -1121,7 +1119,6 @@ L:SetGeneralLocalization({
 })
 
 L:SetOptionLocalization({
-	TimerPhase2			= "2단계 타이머 바 보기",
 	specwarnP2Soon		= "켈투자드 전투 개시 10초 전에 특수 알림 보기"
 })
 
@@ -1131,10 +1128,6 @@ L:SetMiscLocalization({
 
 L:SetWarningLocalization({
 	specwarnP2Soon		= "10초 후 켈투자드 전투 개시"
-})
-
-L:SetTimerLocalization({
-	TimerPhase2			= "2단계"
 })
 
 -----------------

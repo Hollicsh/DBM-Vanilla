@@ -43,7 +43,7 @@ local timerEnrage			= mod:NewBerserkTimer(300)
 local timerNextShift		= mod:NewVarTimer("v25.9-35.7", 28089, nil, nil, nil, 2, nil, DBM_COMMON_L.DEADLY_ICON)
 local timerShiftCast		= mod:NewCastTimer(3, 28089, nil, nil, nil, 2)
 local timerThrow			= mod:NewCDTimer(21, 28338, nil, nil, nil, 5, nil, DBM_COMMON_L.TANK_ICON)
-local timerIntermission		= mod:NewIntermissionTimer("v12.8-16", nil, CL.INTERMISSION, true, nil, nil, "136106")
+local timerPhase2			= mod:NewStageCountTimer("v12.8-16")
 
 mod:AddInfoFrameOption()
 
@@ -200,7 +200,7 @@ function mod:OnSync(msg, arg)
 			if deadBosses[15929] and deadBosses[15930] then
 				self:SetStage(1.5)
 				warnPhase2Soon:Show()
-				timerIntermission:Start()
+				timerPhase2:Start(nil, 2)
 				DBM.InfoFrame:Hide()
 			end
 		end
@@ -214,7 +214,7 @@ function mod:OnSync(msg, arg)
 		warnPhase:Show(DBM_CORE_L.AUTO_ANNOUNCE_TEXTS.stage:format(2))
         timerEnrage:Start()
 		timerNextShift:Start(11.3)
-		timerIntermission:Stop()
+		timerPhase2:Stop()
 		warnPhase:Play("ptwo")
 	end
 end

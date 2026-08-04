@@ -32,7 +32,7 @@ local warnRiderDown		= mod:NewAnnounce("WarningRiderDown", 4)
 local warnKnightDown	= mod:NewAnnounce("WarningKnightDown", 2)
 local warnPhase 		= mod:NewPhaseChangeAnnounce(2, nil, nil, nil, nil, nil, 2)
 
-local timerPhase2		= mod:NewTimer(270, "TimerPhase2", "136116", nil, nil, 6)
+local timerPhase2		= mod:NewStageCountTimer(270)
 local timerWave			= mod:NewTimer(20, "TimerWave", "135974", nil, nil, 1)
 
 local timerTeleport, warnTeleportSoon, warnTeleportLive, warnTeleportLiveSoon, timerTeleportLive, warnTeleportDead, warnTeleportDeadSoon, timerTeleportDead
@@ -166,7 +166,7 @@ function mod:OnCombatStart()
 		"UNIT_HEALTH"
 	)
 	warnPhase:Show(DBM_CORE_L.AUTO_ANNOUNCE_TEXTS.stage:format(1))
-	timerPhase2:Start()
+	timerPhase2:Start(nil, 2)
 	if DBM:IsSeasonal("SeasonOfDiscovery") then
 		self:Schedule(270, function()
 		warnPhase:Show(DBM_CORE_L.AUTO_ANNOUNCE_TEXTS.stage:format(2))

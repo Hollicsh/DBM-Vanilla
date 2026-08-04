@@ -1021,7 +1021,6 @@ L:SetGeneralLocalization({
 
 L:SetOptionLocalization({
 	TimerWave			= "Show timer for next wave",
-	TimerPhase2			= "Show timer for Phase 2",
 	WarningWaveSoon		= "Show pre-warning for wave",
 	WarningWaveSpawned	= "Show warning for wave spawned",
 	WarningRiderDown	= "Show warning when an Unrelenting Rider dies",
@@ -1030,7 +1029,6 @@ L:SetOptionLocalization({
 
 L:SetTimerLocalization({
 	TimerWave	= "Wave %d/18",
-	TimerPhase2	= "Phase 2"
 })
 
 L:SetWarningLocalization({
@@ -1123,7 +1121,6 @@ L:SetGeneralLocalization({
 })
 
 L:SetOptionLocalization({
-	TimerPhase2			= "Show timer for Phase 2",
 	specwarnP2Soon		= "Show special warning 10 seconds before Kel'Thuzad engages"
 })
 
@@ -1133,10 +1130,6 @@ L:SetMiscLocalization({
 
 L:SetWarningLocalization({
 	specwarnP2Soon	= "Kel'Thuzad engages in 10 Seconds"
-})
-
-L:SetTimerLocalization({
-	TimerPhase2	= "Phase 2"
 })
 
 -----------------
