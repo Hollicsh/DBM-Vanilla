@@ -22,7 +22,7 @@ mod:RegisterCombat("combat")
 mod:RegisterEventsInCombat(
 	"SPELL_AURA_APPLIED 26615",
 	"SPELL_CAST_START 26102 26103",
-	"SPELL_CAST_SUCCESS 26058",
+	"SPELL_CAST_SUCCESS 26058 26586",
 	"SPELL_DAMAGE 1215745"
 )
 
@@ -34,8 +34,8 @@ local warnBerserkSoon	= mod:NewSoonAnnounce(26615, 2)
 
 local specWarnBlast		= mod:NewSpecialWarningSpell(26102, nil, nil, nil, 2, 2, nil, nil, "stunsoon")
 
-local timerSubmerge		= mod:NewTimer(30, "TimerSubmerge", "Interface\\AddOns\\DBM-Core\\textures\\CryptFiendBurrow.blp", nil, nil, 6)
-local timerEmerge		= mod:NewTimer(30, "TimerEmerge", "Interface\\AddOns\\DBM-Core\\textures\\CryptFiendUnBurrow.blp", nil, nil, 6)
+local timerSubmerge		= mod:NewTimer(184.6, "TimerSubmerge", "Interface\\AddOns\\DBM-Core\\textures\\CryptFiendBurrow.blp", nil, nil, 6)
+local timerEmerge		= mod:NewTimer(30.1, "TimerEmerge", "Interface\\AddOns\\DBM-Core\\textures\\CryptFiendUnBurrow.blp", nil, nil, 6)
 local timerBlastCD		= mod:NewVarTimer("v22.1-26.8", 26102, nil, nil, nil, 2)
 local timerSweepCD		= mod:NewVarTimer("v20.6-22.6", 26103, nil, "Tank", 2, 5, nil, DBM_COMMON_L.TANK_ICON)
 
@@ -47,13 +47,15 @@ end
 
 mod.vb.prewarn_berserk = false
 mod.vb.berserked = false
+mod.vb.submerged = false
 
 function mod:OnCombatStart()
 	self.vb.prewarn_berserk = false
 	self.vb.berserked = false
+	self.vb.submerged = false
 	timerBlastCD:Start("v20.1-26.3")
 	timerSweepCD:Start("v22.6-25.9")
-	timerSubmerge:Start(184)
+	timerSubmerge:Start()
 	self:RegisterShortTermEvents(
 		"UNIT_HEALTH"
 	)
@@ -64,13 +66,6 @@ end
 
 function mod:OnCombatEnd()
 	self:UnregisterShortTermEvents()
-end
-
-function mod:Emerge()
-	warnEmerge:Show()
-	timerBlastCD:Start("v20.1-26.3")
-	timerSweepCD:Start("v22.6-25.9")
-	timerSubmerge:Start(184)
 end
 
 function mod:SPELL_AURA_APPLIED(args)
@@ -95,13 +90,20 @@ function mod:SPELL_CAST_START(args)
 end
 
 function mod:SPELL_CAST_SUCCESS(args)
-	if args:IsSpell(26058) and self:AntiSpam(3) and not self.vb.berserked then
+	if 	args:IsSpell(26058) and not self.vb.berserked then
+		self.vb.submerged = true
+		warnSubmerge:Show()
+		timerSubmerge:Stop()
 		timerBlastCD:Stop()
 		timerSweepCD:Stop()
-		timerSubmerge:Stop()
-		warnSubmerge:Show()
 		timerEmerge:Start()
-		self:ScheduleMethod(30, "Emerge")
+	elseif args:IsSpell(26586) and self.vb.submerged then
+		self.vb.submerged = false
+		warnEmerge:Show()
+		timerEmerge:Stop()
+		timerBlastCD:Start("v20.1-26.3")
+		timerSweepCD:Start("v22.6-25.9")
+		timerSubmerge:Start()
 	end
 end
 
