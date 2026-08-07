@@ -60,6 +60,9 @@ mod:AddSpeedClearOption("BWL", true)
 mod.vb.eggsLeft = 30
 mod.vb.firstEngageTime = nil
 
+--Request speed clear variables, in case it was already started before mod loaded
+mod:SendSync("IsBWLStarted")
+
 -- Polyfill because I don't feel like this justifies a forced core update
 local function isBlackEssenceEnabled()
 	if mod.IsBwlBlackEssenceEnabled then
@@ -83,6 +86,20 @@ function mod:OnCombatStart()
 	end
 	if timerDrakeSpawn and isBlackEssenceEnabled() then
 		timerDrakeSpawn:Start()
+	end
+end
+
+function mod:OnSync(msg, startTime)
+	--Sync recieved with start time and ours is currently not started
+	if msg == "BWLStarted" and startTime and not self.vb.firstEngageTime then
+		self.vb.firstEngageTime = tonumber(startTime)
+		if self.Options.FastestClear and self.Options.SpeedClearTimer then
+			--Custom bar creation that's bound to core, not mod, so timer doesn't stop when mod stops it's own timers
+			local adjustment = GetServerTime() - self.vb.firstEngageTime
+			DBT:CreateBar(self.Options.FastestClear - adjustment, DBM_CORE_L.SPEED_CLEAR_TIMER_TEXT, 136106)
+		end
+	elseif msg == "IsBWLStarted" and self.vb.firstEngageTime then
+		self:SendSync("BWLStarted", self.vb.firstEngageTime)
 	end
 end
 
