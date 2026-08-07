@@ -1021,8 +1021,7 @@ L:SetWarningLocalization({
 	WarningWaveSoon		= "Onda %d: %s em 3 segundos",
 	WarningWaveSpawned	= "Onda %d: %s",
 	WarningRiderDown	= "Cavalgante morto",
-	WarningKnightDown	= "Cavaleiro morto",
-	WarningPhase2		= "Fase 2"
+	WarningKnightDown	= "Cavaleiro morto"
 })
 
 L:SetMiscLocalization({

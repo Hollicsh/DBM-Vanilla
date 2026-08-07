@@ -878,7 +878,7 @@ L:SetMiscLocalization({
 	Yell2P2 	= "打……烂……你！",
 	Yell3P2 	= "杀……",
 	EmoteDies 	= "%s死了。",
-	--EmoteRevive = "%s is jolted back to life!"
+	EmoteRevive = "%s被猛烈的电击复活了！"
 })
 
 L:SetOptionLocalization({
@@ -938,8 +938,7 @@ L:SetWarningLocalization({
 	WarningWaveSoon			= "3秒后第%d波：%s",
 	WarningWaveSpawned		= "第%d波：%s出现了",
 	WarningRiderDown		= "骑兵已死亡",
-	WarningKnightDown		= "死亡骑士已死亡",
-	WarningPhase2			= "第二阶段"
+	WarningKnightDown		= "死亡骑士已死亡"
 })
 
 L:SetMiscLocalization({

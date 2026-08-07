@@ -939,8 +939,7 @@ L:SetWarningLocalization({
 	WarningWaveSoon		= "3秒後第%d波：%s",
 	WarningWaveSpawned	= "第%d波：%s出現了",
 	WarningRiderDown	= "騎兵已死亡",
-	WarningKnightDown	= "死亡騎士已死亡",
-	WarningPhase2		= "第二階段"
+	WarningKnightDown	= "死亡騎士已死亡"
 })
 
 L:SetMiscLocalization({

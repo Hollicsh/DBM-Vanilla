@@ -1018,7 +1018,7 @@ L:SetMiscLocalization({
 L = DBM:GetModLocalization("GothikVanilla")
 
 L:SetGeneralLocalization({
-	name = "영혼 착취자 고딕"
+	name = "영혼의 착취자 고딕"
 })
 
 L:SetOptionLocalization({
@@ -1037,8 +1037,7 @@ L:SetWarningLocalization({
 	WarningWaveSoon		= "%d번 병력: %s 3초 전",
 	WarningWaveSpawned	= "%d번 병력: %s",
 	WarningRiderDown	= "기병 잡음",
-	WarningKnightDown	= "기사 잡음",
-	WarningPhase2		= "2단계"
+	WarningKnightDown	= "기사 잡음"
 })
 
 L:SetMiscLocalization({

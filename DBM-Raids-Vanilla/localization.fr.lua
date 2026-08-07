@@ -1005,8 +1005,7 @@ L:SetOptionLocalization({
 	WarningWaveSoon		= "Afficher une pré-annonce pour les vagues",
 	WarningWaveSpawned	= "Afficher une annonce quand une vague est arrivée",
 	WarningRiderDown	= "Afficher une annonce quand un Cavalier meurt",
-	WarningKnightDown	= "Afficher une annonce quand un Chevalier meurt",
-	WarningPhase2		= "Afficher une annonce pour la phase 2"
+	WarningKnightDown	= "Afficher une annonce quand un Chevalier meurt"
 })
 
 L:SetTimerLocalization({
@@ -1017,8 +1016,7 @@ L:SetWarningLocalization({
 	WarningWaveSoon		= "Vague %d : %s dans 3 sec",
 	WarningWaveSpawned	= "Vague %d : %s arrivée",
 	WarningRiderDown	= "Cavalier mort",
-	WarningKnightDown	= "Chevalier mort",
-	WarningPhase2		= "Phase 2"
+	WarningKnightDown	= "Chevalier mort"
 })
 
 L:SetMiscLocalization({

@@ -1041,8 +1041,7 @@ L:SetWarningLocalization({
 	WarningWaveSoon		= "Волна %d: %s через 3 сек.",
 	WarningWaveSpawned	= "Волна %d: %s призван",
 	WarningRiderDown	= "Всадник мертв",
-	WarningKnightDown	= "Рыцарь мертв",
-	WarningPhase2		= "2-я фаза"
+	WarningKnightDown	= "Рыцарь мертв"
 })
 
 L:SetMiscLocalization({
